@@ -133,11 +133,23 @@
     font-size:15.5px;color:var(--fg-dim);max-width:64ch;line-height:1.7;margin-bottom:26px;
   }
   .hero-meta{
-    display:flex;flex-wrap:wrap;gap:10px 20px;
-    font-family:var(--mono);font-size:13px;color:var(--fg-faint);
+    display:flex;flex-wrap:wrap;align-items:center;gap:14px;
   }
-  .hero-meta a{text-decoration:none;color:var(--fg-dim);border-bottom:1px solid transparent;transition:border-color .15s ease, color .15s ease;}
-  .hero-meta a:hover{color:var(--accent);border-color:var(--accent);}
+  .hero-meta a.contact-icon{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:38px;height:38px;border-radius:10px;
+    background:var(--bg-raised);
+    border:1px solid var(--border);
+    transition:border-color .15s ease, transform .15s ease, background .15s ease;
+  }
+  .hero-meta a.contact-icon:hover{
+    border-color:var(--accent-dim);
+    background:rgba(94,234,212,0.08);
+    transform:translateY(-2px);
+  }
+  .hero-meta a.contact-icon img{
+    width:19px;height:19px;object-fit:contain;display:block;
+  }
 
   /* ---------- section framing ---------- */
   section{padding:44px 0;border-top:1px solid var(--border-soft);}
@@ -258,6 +270,8 @@
     .avatar{width:64px;height:64px;}
     .skill-row{grid-template-columns:1fr;gap:4px;}
     .topbar nav a.navlink{display:none;}
+    .hero-meta a.contact-icon{width:40px;height:40px;}
+    .hero-meta a.contact-icon img{width:20px;height:20px;}
   }
   @media (prefers-reduced-motion: reduce){
     *{animation:none !important;transition:none !important;}
@@ -312,9 +326,15 @@
         agents, and full-stack web development.
       </p>
       <div class="hero-meta">
-        <a href="mailto:sihabulislamsafin1@gmail.com">sihabulislamsafin1@gmail.com</a>
-        <a href="https://github.com/sihabsafin" target="_blank" rel="noopener">github.com/sihabsafin</a>
-        <a href="https://linkedin.com/in/sihabsafin" target="_blank" rel="noopener">linkedin.com/in/sihabsafin</a>
+        <a class="contact-icon" href="mailto:sihabulislamsafin1@gmail.com" aria-label="Email Sihab Safin" title="Email">
+          <img src="./email.png" alt="Email">
+        </a>
+        <a class="contact-icon" href="https://github.com/sihabsafin" target="_blank" rel="noopener" aria-label="Sihab Safin on GitHub" title="GitHub">
+          <img src="./github.png" alt="GitHub">
+        </a>
+        <a class="contact-icon" href="https://linkedin.com/in/sihabsafin" target="_blank" rel="noopener" aria-label="Sihab Safin on LinkedIn" title="LinkedIn">
+          <img src="./linkedin.png" alt="LinkedIn">
+        </a>
       </div>
     </div>
 
@@ -377,7 +397,7 @@
           <li>Delivered builds across WordPress, Shopify, and custom HTML/CSS/JS stacks with Core Web Vitals and LiteSpeed Cache optimization.</li>
         </ul>
       </div>
-      
+
       <div class="job">
         <div class="job-top">
           <div class="job-role">SEO Expert <span class="job-org">— Konvergence</span></div>
